@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using SFA.DAS.AssessorService.Api.Types.Models.Register;
-using SFA.DAS.AssessorService.Api.Types.Models.Standards;
 using SFA.DAS.AssessorService.Api.Types.Models.Validation;
 
 namespace SFA.DAS.AssessorService.Application.Interfaces

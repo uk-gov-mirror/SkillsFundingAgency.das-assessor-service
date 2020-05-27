@@ -1,6 +1,5 @@
-﻿using SFA.DAS.AssessorService.Api.Types.Models.AO;
-using SFA.DAS.AssessorService.Api.Types.Models.Apply;
-using SFA.DAS.AssessorService.Api.Types.Models.Standards;
+﻿using SFA.DAS.AssessorService.Api.Types.Models.Apply;
+using SFA.DAS.AssessorService.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

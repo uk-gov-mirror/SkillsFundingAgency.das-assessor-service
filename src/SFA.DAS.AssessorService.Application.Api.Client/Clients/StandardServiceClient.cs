@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
 using SFA.DAS.Apprenticeships.Api.Types;
+using SFA.DAS.AssessorService.Domain.Entities;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using SFA.DAS.AssessorService.Api.Types.Models.Standards;
 
 namespace SFA.DAS.AssessorService.Application.Api.Client.Clients
 {

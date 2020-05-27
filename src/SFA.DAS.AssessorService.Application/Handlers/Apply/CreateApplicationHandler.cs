@@ -1,8 +1,9 @@
 ﻿using MediatR;
-using SFA.DAS.AssessorService.Api.Types.Models.AO;
 using SFA.DAS.AssessorService.Api.Types.Models.Apply;
 using SFA.DAS.AssessorService.Application.Interfaces;
 using SFA.DAS.AssessorService.ApplyTypes;
+using SFA.DAS.AssessorService.Domain.Entities;
+using SFA.DAS.AssessorService.Domain.JsonData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +46,7 @@ namespace SFA.DAS.AssessorService.Application.Handlers.Apply
                 var applyData = new ApplyData
                 {
                     Sequences = sequences,
-                    Apply = new ApplyTypes.Apply
+                    Apply = new Domain.JsonData.Apply()
                     {
                         ReferenceNumber = await CreateReferenceNumber(request.ApplicationReferenceFormat),
                         InitSubmissions = new List<Submission>(),
@@ -147,7 +148,7 @@ namespace SFA.DAS.AssessorService.Application.Handlers.Apply
             }
         }
 
-        private static bool IsFinancialExempt(ApplyTypes.FHADetails financials, OrganisationType orgType)
+        private static bool IsFinancialExempt(FHADetails financials, OrganisationType orgType)
         {
             if (financials == null) return false;
 

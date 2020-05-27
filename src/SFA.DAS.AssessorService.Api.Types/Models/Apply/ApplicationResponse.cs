@@ -1,4 +1,4 @@
-﻿using SFA.DAS.AssessorService.ApplyTypes;
+﻿using SFA.DAS.AssessorService.Domain.JsonData;
 using System;
 
 namespace SFA.DAS.AssessorService.Api.Types.Models.Apply

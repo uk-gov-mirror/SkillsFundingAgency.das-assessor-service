@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using SFA.DAS.AssessorService.Domain.Entities;
+using SFA.DAS.AssessorService.Domain.JsonData;
 
 namespace SFA.DAS.AssessorService.Data
 {

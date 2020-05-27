@@ -1,9 +1,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using SFA.DAS.AssessorService.Api.Types.Models.AO;
 using SFA.DAS.AssessorService.Api.Types.Models.Register;
 using SFA.DAS.AssessorService.Application.Interfaces;
+using SFA.DAS.AssessorService.Domain.JsonData;
 
 namespace SFA.DAS.AssessorService.Application.Handlers.EpaOrganisationHandlers
 {

@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using System;
 using SFA.DAS.AssessorService.Api.Types.Models;
+using SFA.DAS.AssessorService.Domain.JsonData;
+using SFA.DAS.AssessorService.Domain.DTOs;
 
 namespace SFA.DAS.AssessorService.Application.Api.AutoMapperProfiles
 {
@@ -8,7 +10,7 @@ namespace SFA.DAS.AssessorService.Application.Api.AutoMapperProfiles
     {
         public AssessorServiceOrganisationProfile()
         {
-            CreateMap<AssessorService.Api.Types.Models.AO.AssessmentOrganisationSummary, OrganisationSearchResult>()
+            CreateMap<AssessmentOrganisationSummary, OrganisationSearchResult>()
                 .BeforeMap((source, dest) => dest.OrganisationReferenceType = "RoEPAO")
                 .BeforeMap((source, dest) => dest.RoEPAOApproved = true)
                 .BeforeMap((source, dest) => dest.EasApiOrganisationType = null)
@@ -18,7 +20,7 @@ namespace SFA.DAS.AssessorService.Application.Api.AutoMapperProfiles
                 .ForMember(dest => dest.LegalName, opt => opt.ResolveUsing(source => source.OrganisationData?.LegalName))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(source => source.Email))
                 .ForMember(dest => dest.OrganisationType, opt => opt.MapFrom(source => source.OrganisationType))
-                .ForMember(dest => dest.Address, opt => opt.MapFrom(source => Mapper.Map< AssessorService.Api.Types.Models.AO.OrganisationData, OrganisationAddress>(source.OrganisationData)))
+                .ForMember(dest => dest.Address, opt => opt.MapFrom(source => Mapper.Map<OrganisationData, OrganisationAddress>(source.OrganisationData)))
                 .ForMember(dest => dest.CompanyNumber, opt => opt.ResolveUsing(source => source.OrganisationData?.CompanyNumber))
                 .ForMember(dest => dest.CharityNumber, opt => opt.ResolveUsing(source => source.OrganisationData?.CharityNumber))
                 .ForMember(dest => dest.FinancialDueDate, opt => opt.ResolveUsing(source => source.OrganisationData?.FHADetails?.FinancialDueDate))
@@ -32,22 +34,12 @@ namespace SFA.DAS.AssessorService.Application.Api.AutoMapperProfiles
     {
         public AssessorServiceOrganisationAddressProfile()
         {
-            CreateMap<AssessorService.Api.Types.Models.AO.OrganisationData, OrganisationAddress>()
+            CreateMap<OrganisationData, OrganisationAddress>()
                 .ForMember(dest => dest.Address1, opt => opt.MapFrom(source => source.Address1))
                 .ForMember(dest => dest.Address2, opt => opt.MapFrom(source => source.Address2))
                 .ForMember(dest => dest.Address3, opt => opt.MapFrom(source => source.Address3))
                 .ForMember(dest => dest.City, opt => opt.MapFrom(source => source.Address4))
                 .ForMember(dest => dest.Postcode, opt => opt.MapFrom(source => source.Postcode))
-                .ForAllOtherMembers(dest => dest.Ignore());
-        }
-    }
-    public class AssessorServiceOrganisationTypeProfile : Profile
-    {
-        public AssessorServiceOrganisationTypeProfile()
-        {
-            CreateMap<AssessorService.Api.Types.Models.AO.OrganisationType, OrganisationType>()
-                .ForMember(dest => dest.Type, opt => opt.MapFrom(source => source.Type))
-                .ForMember(dest => dest.TypeDescription, opt => opt.MapFrom(source => source.TypeDescription))
                 .ForAllOtherMembers(dest => dest.Ignore());
         }
     }

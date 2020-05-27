@@ -6,10 +6,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
 using SFA.DAS.AssessorService.Settings;
-using SFA.DAS.AssessorService.Api.Types.Models.AO;
 using SFA.DAS.AssessorService.Data.DapperTypeHandlers;
 using System;
-using SFA.DAS.AssessorService.Api.Types.Models.Standards;
+using SFA.DAS.AssessorService.Domain.Entities;
+using SFA.DAS.AssessorService.Domain.DTOs;
+using SFA.DAS.AssessorService.Domain.JsonData;
 
 namespace SFA.DAS.AssessorService.Data
 {

@@ -1,10 +1,10 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Logging;
-using SFA.DAS.AssessorService.Api.Types.Models.Apply.Review;
 using SFA.DAS.AssessorService.Application.Interfaces;
 using SFA.DAS.AssessorService.ApplyTypes;
 using SFA.DAS.AssessorService.Data.DapperTypeHandlers;
 using SFA.DAS.AssessorService.Domain.Entities;
+using SFA.DAS.AssessorService.Domain.JsonData;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -118,7 +118,7 @@ namespace SFA.DAS.AssessorService.Data.Apply
 
                 if (applyData.Apply == null)
                 {
-                    applyData.Apply = new ApplyTypes.Apply();
+                    applyData.Apply = new Domain.JsonData.Apply();
                 }
 
                 applyData.Apply.StandardCode = standardCode;

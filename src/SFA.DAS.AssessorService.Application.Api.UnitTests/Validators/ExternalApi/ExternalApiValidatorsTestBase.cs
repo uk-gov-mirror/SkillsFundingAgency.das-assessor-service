@@ -1,7 +1,6 @@
 ﻿using FizzWare.NBuilder;
 using Moq;
 using Newtonsoft.Json;
-using SFA.DAS.AssessorService.Api.Types.Models.Standards;
 using SFA.DAS.AssessorService.Application.Interfaces;
 using SFA.DAS.AssessorService.Domain.Consts;
 using SFA.DAS.AssessorService.Domain.Entities;
@@ -9,7 +8,7 @@ using SFA.DAS.AssessorService.Domain.JsonData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Organisation = SFA.DAS.AssessorService.Domain.Entities.Organisation;
+
 namespace SFA.DAS.AssessorService.Application.Api.UnitTests.Validators.ExternalApi
 {
     public class ExternalApiValidatorsTestBase

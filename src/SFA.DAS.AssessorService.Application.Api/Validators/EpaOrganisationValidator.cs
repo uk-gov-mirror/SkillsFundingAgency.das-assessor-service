@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Localization;
-using SFA.DAS.Apprenticeships.Api.Types;
 using SFA.DAS.AssessorService.Api.Types.Models.Register;
-using SFA.DAS.AssessorService.Api.Types.Models.Standards;
 using SFA.DAS.AssessorService.Api.Types.Models.Validation;
 using SFA.DAS.AssessorService.Application.Api.Consts;
 using SFA.DAS.AssessorService.Application.Interfaces;
+using SFA.DAS.AssessorService.Domain.Entities;
 
 namespace SFA.DAS.AssessorService.Application.Api.Validators
 {

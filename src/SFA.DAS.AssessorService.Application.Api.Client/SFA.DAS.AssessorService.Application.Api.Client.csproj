@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.6</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,10 +20,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SFA.DAS.AssessorService.Api.Types\SFA.DAS.AssessorService.Api.Types.csproj" />
-    <ProjectReference Include="..\SFA.DAS.AssessorService.ApplyTypes\SFA.DAS.AssessorService.ApplyTypes.csproj" />
-    <ProjectReference Include="..\SFA.DAS.AssessorService.Settings\SFA.DAS.AssessorService.Settings.csproj" />
+    <ProjectReference PrivateAssets="all" Include="..\SFA.DAS.AssessorService.Api.Types\SFA.DAS.AssessorService.Api.Types.csproj" />
+    <ProjectReference PrivateAssets="all" Include="..\SFA.DAS.AssessorService.ApplyTypes\SFA.DAS.AssessorService.ApplyTypes.csproj" />
+    <ProjectReference PrivateAssets="all" Include="..\SFA.DAS.AssessorService.Settings\SFA.DAS.AssessorService.Settings.csproj" />
   </ItemGroup>
 
-
+  <ItemGroup>
+    <Content Pack="True" PackagePath="lib\netstandard2.0" Include="bin\$(Configuration)\netstandard2.0\SFA.DAS.AssessorService.Api.Types.dll" />
+    <Content Pack="True" PackagePath="lib\netstandard2.0" Include="bin\$(Configuration)\netstandard2.0\SFA.DAS.AssessorService.ApplyTypes.dll" />
+    <Content Pack="True" PackagePath="lib\netstandard2.0" Include="bin\$(Configuration)\netstandard2.0\SFA.DAS.AssessorService.Domain.dll" />
+    <Content Pack="True" PackagePath="lib\netstandard2.0" Include="bin\$(Configuration)\netstandard2.0\SFA.DAS.AssessorService.ExternalApis.dll" />
+    <Content Pack="True" PackagePath="lib\netstandard2.0" Include="bin\$(Configuration)\netstandard2.0\SFA.DAS.AssessorService.Settings.dll" />
+  </ItemGroup>
+  
 </Project>

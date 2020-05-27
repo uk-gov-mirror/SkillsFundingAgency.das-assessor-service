@@ -52,7 +52,6 @@ namespace SFA.DAS.AssessorService.Application.Api.StartupConfiguration
 
                 cfg.AddProfile<AssessorServiceOrganisationProfile>();
                 cfg.AddProfile<AssessorServiceOrganisationAddressProfile>();
-                cfg.AddProfile<AssessorServiceOrganisationTypeProfile>();
                 cfg.AddProfile<AssessorServiceOrganisationResponse>();
 
                 cfg.AddProfile<ProviderRegisterOrganisationProfile>();

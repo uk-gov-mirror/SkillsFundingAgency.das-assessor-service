@@ -7,8 +7,8 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
 using SFA.DAS.AssessorService.Api.Types.Models;
-using SFA.DAS.AssessorService.Api.Types.Models.AO;
 using SFA.DAS.AssessorService.Application.Api.Controllers;
+using SFA.DAS.AssessorService.Domain.Entities;
 
 namespace SFA.DAS.AssessorService.Application.Api.UnitTests.Controllers.Register.Query
 {
@@ -20,19 +20,19 @@ namespace SFA.DAS.AssessorService.Application.Api.UnitTests.Controllers.Register
         private static object _result;
         private static Mock<IMediator> _mediator;
         private static Mock<ILogger<RegisterQueryController>> _logger;
-        private List<AssessorService.Api.Types.Models.AO.OrganisationType> _expectedOrganisationTypes;
-        private AssessorService.Api.Types.Models.AO.OrganisationType _organisationType1;
-        private AssessorService.Api.Types.Models.AO.OrganisationType _organisationType2;
+        private List<OrganisationType> _expectedOrganisationTypes;
+        private OrganisationType _organisationType1;
+        private OrganisationType _organisationType2;
 
         [SetUp]
         public void Arrange()
         {
             _mediator = new Mock<IMediator>();
             _logger = new Mock<ILogger<RegisterQueryController>>();
-            _organisationType1 = new AssessorService.Api.Types.Models.AO.OrganisationType { Id = 1, Type = "Type 1"};
-            _organisationType2 = new AssessorService.Api.Types.Models.AO.OrganisationType { Id = 2, Type = "Another Type"};
+            _organisationType1 = new OrganisationType { Id = 1, Type = "Type 1"};
+            _organisationType2 = new OrganisationType { Id = 2, Type = "Another Type"};
 
-            _expectedOrganisationTypes = new List<AssessorService.Api.Types.Models.AO.OrganisationType>
+            _expectedOrganisationTypes = new List<OrganisationType>
             {
                 _organisationType1,
                 _organisationType2
@@ -68,13 +68,13 @@ namespace SFA.DAS.AssessorService.Application.Api.UnitTests.Controllers.Register
         [Test]
         public void ResultsAreOfTypeListOrganisationType()
         {
-            ((OkObjectResult)_result).Value.Should().BeOfType<List<AssessorService.Api.Types.Models.AO.OrganisationType>>();
+            ((OkObjectResult)_result).Value.Should().BeOfType<List<OrganisationType>>();
         }
 
         [Test]
         public void ResultsMatchExpectedListOfOrganisationTypes()
         {
-            var organisationTypes = ((OkObjectResult)_result).Value as List<AssessorService.Api.Types.Models.AO.OrganisationType>;
+            var organisationTypes = ((OkObjectResult)_result).Value as List<OrganisationType>;
             organisationTypes.Count.Should().Be(2);
             organisationTypes.Should().Contain(_organisationType1);
             organisationTypes.Should().Contain(_organisationType2);

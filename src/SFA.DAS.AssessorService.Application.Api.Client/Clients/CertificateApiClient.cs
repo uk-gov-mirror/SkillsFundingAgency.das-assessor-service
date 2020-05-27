@@ -84,5 +84,13 @@ namespace SFA.DAS.AssessorService.Application.Api.Client.Clients
                 return await RequestAndDeserialiseAsync<List<Option>>(httpRequest, "Could not get Options");
             }
         }
+
+        public async Task<PaginatedList<CertificateSummaryResponse>> GetCertificatesToBeApproved(int pageSize, int pageIndex, string status, string privatelyFundedStatus)
+        {
+            using (var httpRequest = new HttpRequestMessage(HttpMethod.Get, $"/api/v1/certificates/approvals/?pageSize={pageSize}&pageIndex={pageIndex}&status={status}&privatelyFundedStatus={privatelyFundedStatus}"))
+            {
+                return await RequestAndDeserialiseAsync<PaginatedList<CertificateSummaryResponse>>(httpRequest, "Could not get certificates");
+            }
+        }
     }
 }

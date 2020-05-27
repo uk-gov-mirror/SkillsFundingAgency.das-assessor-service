@@ -5,12 +5,9 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using Newtonsoft.Json;
 using RichardSzalay.MockHttp;
-using SFA.DAS.Apprenticeships.Api.Types;
-using SFA.DAS.Apprenticeships.Api.Types.AssessmentOrgs;
-using SFA.DAS.AssessorService.Api.Types.Models.AO;
 using SFA.DAS.AssessorService.Application.Api.Client;
 using SFA.DAS.AssessorService.Application.Api.Client.Clients;
-using SFA.DAS.AssessorService.ExternalApis.AssessmentOrgs;
+using SFA.DAS.AssessorService.Domain.DTOs;
 using SFA.DAS.AssessorService.Settings;
 
 namespace SFA.DAS.AssessorService.Web.UnitTests.MockedObjects

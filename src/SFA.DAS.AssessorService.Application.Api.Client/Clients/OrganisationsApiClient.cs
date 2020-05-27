@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SFA.DAS.AssessorService.Api.Types.Models.AO;
 using SFA.DAS.AssessorService.Api.Types.Models.Validation;
 using SFA.DAS.AssessorService.Domain.Entities;
 using SFA.DAS.AssessorService.Domain.Paging;
@@ -15,6 +13,7 @@ namespace SFA.DAS.AssessorService.Application.Api.Client.Clients
     using SFA.DAS.AssessorService.Api.Types.CharityCommission;
     using SFA.DAS.AssessorService.Api.Types.CompaniesHouse;
     using SFA.DAS.AssessorService.Api.Types.Models.Register;
+    using SFA.DAS.AssessorService.Domain.DTOs;
     using System.Net;
 
     public class OrganisationsApiClient : ApiClientBase, IOrganisationsApiClient
@@ -240,6 +239,14 @@ namespace SFA.DAS.AssessorService.Application.Api.Client.Clients
             }
         }
 
+        public async Task UpdateFinancials(UpdateFinancialsRequest updateFinancialsRequest)
+        {
+            using (var request = new HttpRequestMessage(HttpMethod.Post, "api/ao/assessment-organisations/update-financials"))
+            {
+                await PostPutRequest(request, updateFinancialsRequest);
+            }
+        }
+
         public async Task<ValidationResponse> ValidateSearchStandards(string searchstring)
         {
            
@@ -322,12 +329,12 @@ namespace SFA.DAS.AssessorService.Application.Api.Client.Clients
             }
         }
 
-        public async Task<List<AssessorService.Api.Types.Models.AO.OrganisationType>> GetOrganisationTypes()
+        public async Task<List<OrganisationType>> GetOrganisationTypes()
         {
             using (var request = new HttpRequestMessage(HttpMethod.Get,
                 $"/api/ao/organisation-types"))
             {
-                return await RequestAndDeserialiseAsync<List<AssessorService.Api.Types.Models.AO.OrganisationType>>(request,
+                return await RequestAndDeserialiseAsync<List<OrganisationType>>(request,
                     $"Could not retrieve organisation types.");
             }
         }

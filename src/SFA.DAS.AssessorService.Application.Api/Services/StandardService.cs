@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using SFA.DAS.Apprenticeships.Api.Types;
-using SFA.DAS.AssessorService.Api.Types.Models.Standards;
 using SFA.DAS.AssessorService.Application.Interfaces;
 using SFA.DAS.AssessorService.Domain.Entities;
+using SFA.DAS.AssessorService.Domain.JsonData;
 using SFA.DAS.AssessorService.ExternalApis.AssessmentOrgs;
 using SFA.DAS.AssessorService.ExternalApis.IFAStandards;
 using SFA.DAS.AssessorService.ExternalApis.IFAStandards.Types;

@@ -1,5 +1,4 @@
-﻿using SFA.DAS.AssessorService.Api.Types.Models.AO;
-using SFA.DAS.AssessorService.Application.Interfaces;
+﻿using SFA.DAS.AssessorService.Application.Interfaces;
 using SFA.DAS.AssessorService.Settings;
 using System;
 using System.Collections.Generic;
@@ -11,6 +10,8 @@ using Newtonsoft.Json;
 using System.Linq;
 using Microsoft.Extensions.Logging;
 using SFA.DAS.AssessorService.Data.DapperTypeHandlers;
+using SFA.DAS.AssessorService.Domain.JsonData;
+using SFA.DAS.AssessorService.Domain.DTOs;
 
 namespace SFA.DAS.AssessorService.Data
 {
@@ -24,7 +25,7 @@ namespace SFA.DAS.AssessorService.Data
         {
             _configuration = configuration;
             _logger = logger;
-            SqlMapper.AddTypeHandler(typeof(Api.Types.Models.AO.OrganisationData), new OrganisationDataHandler());
+            SqlMapper.AddTypeHandler(typeof(OrganisationData), new OrganisationDataHandler());
             SqlMapper.AddTypeHandler(typeof(OrganisationStandardData), new OrganisationStandardDataHandler());
         }
 

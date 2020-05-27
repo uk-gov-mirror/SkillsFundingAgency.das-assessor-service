@@ -6,10 +6,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using NUnit.Framework;
-using SFA.DAS.AssessorService.Api.Types.Models.Standards;
 using SFA.DAS.AssessorService.Data.IntegrationTests.Handlers;
 using SFA.DAS.AssessorService.Data.IntegrationTests.Models;
 using SFA.DAS.AssessorService.Data.IntegrationTests.Services;
+using SFA.DAS.AssessorService.Domain.Entities;
+using SFA.DAS.AssessorService.Domain.JsonData;
 
 namespace SFA.DAS.AssessorService.Data.IntegrationTests
 {

@@ -14,4 +14,8 @@
       <PackageReference Include="SFA.DAS.QnA.Api.Types" Version="0.2.156" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\SFA.DAS.AssessorService.Domain\SFA.DAS.AssessorService.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using SFA.DAS.AssessorService.Api.Types.Models;
+using SFA.DAS.AssessorService.Domain.Entities;
 using SFA.DAS.AssessorService.Domain.Paging;
 
 namespace SFA.DAS.AssessorService.Web.ViewModels.Organisation
@@ -27,7 +28,7 @@ namespace SFA.DAS.AssessorService.Web.ViewModels.Organisation
         public PaginatedList<OrganisationSearchResult> Organisations { get; set; }
 
         [JsonIgnore]
-        public IEnumerable<Api.Types.Models.AO.OrganisationType> OrganisationTypes { get; set; }
+        public IEnumerable<OrganisationType> OrganisationTypes { get; set; }
 
         public string OrganisationFoundString()
         {

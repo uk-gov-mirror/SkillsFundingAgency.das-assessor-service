@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using SFA.DAS.AssessorService.Api.Types.Models;
-using SFA.DAS.AssessorService.Api.Types.Models.AO;
 using SFA.DAS.AssessorService.Api.Types.Models.Azure;
-
-
+using SFA.DAS.AssessorService.Domain.DTOs;
+using SFA.DAS.AssessorService.Domain.Entities;
 using SFA.DAS.AssessorService.Web.ViewModels.Account;
 
 namespace SFA.DAS.AssessorService.Web.ViewModels.Organisation
@@ -28,7 +27,7 @@ namespace SFA.DAS.AssessorService.Web.ViewModels.Organisation
         public AccessDeniedViewModel AccessDeniedViewModel { get; set; }
         public string StandardsCount { get; set; }
         public List<OrganisationStandardSummary> OrganisationStandards { get; set; }
-        public List<Api.Types.Models.AO.OrganisationType> OrganisationTypes { get; set; }
+        public List<OrganisationType> OrganisationTypes { get; set; }
         public string CompanyNumber { get; set; }
         public string CharityNumber { get; set; }
 

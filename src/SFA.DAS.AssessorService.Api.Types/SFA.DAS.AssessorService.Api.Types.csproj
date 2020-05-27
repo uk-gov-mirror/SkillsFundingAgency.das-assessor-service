@@ -15,4 +15,8 @@
     <ProjectReference Include="..\SFA.DAS.AssessorService.ExternalApis\SFA.DAS.AssessorService.ExternalApis.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\AO\" />
+  </ItemGroup>
+
 </Project>

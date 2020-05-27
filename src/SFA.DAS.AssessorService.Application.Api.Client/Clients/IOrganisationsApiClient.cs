@@ -4,15 +4,13 @@ using System.Threading.Tasks;
 using SFA.DAS.AssessorService.Api.Types.CharityCommission;
 using SFA.DAS.AssessorService.Api.Types.CompaniesHouse;
 using SFA.DAS.AssessorService.Api.Types.Models;
-using SFA.DAS.AssessorService.Api.Types.Models.AO;
 using SFA.DAS.AssessorService.Api.Types.Models.Register;
 using SFA.DAS.AssessorService.Api.Types.Models.Validation;
-using SFA.DAS.AssessorService.ApplyTypes;
+using SFA.DAS.AssessorService.Domain.DTOs;
 using SFA.DAS.AssessorService.Domain.Entities;
 using SFA.DAS.AssessorService.Domain.Paging;
 using CreateOrganisationRequest = SFA.DAS.AssessorService.Api.Types.Models.CreateOrganisationRequest;
 using Organisation = SFA.DAS.AssessorService.Domain.Entities.Organisation;
-using OrganisationType = SFA.DAS.AssessorService.Api.Types.Models.AO.OrganisationType;
 
 namespace SFA.DAS.AssessorService.Application.Api.Client.Clients
 {
@@ -47,6 +45,8 @@ namespace SFA.DAS.AssessorService.Application.Api.Client.Clients
         Task<List<ContactResponse>> UpdateEpaOrganisationAddress(UpdateEpaOrganisationAddressRequest updateEpaOrganisationAddressRequest);
         Task<List<ContactResponse>> UpdateEpaOrganisationEmail(UpdateEpaOrganisationEmailRequest updateEpaOrganisationEmailRequest);
         Task<List<ContactResponse>> UpdateEpaOrganisationWebsiteLink(UpdateEpaOrganisationWebsiteLinkRequest updateEpaOrganisationWebsiteLinkRequest);
+
+        Task UpdateFinancials(UpdateFinancialsRequest updateFinancialsRequest);
 
         Task<List<OrganisationType>> GetOrganisationTypes();
         

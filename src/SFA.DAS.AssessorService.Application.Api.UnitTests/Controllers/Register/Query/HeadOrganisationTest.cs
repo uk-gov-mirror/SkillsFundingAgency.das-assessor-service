@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using FluentAssertions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -10,8 +7,8 @@ using Moq;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
 using SFA.DAS.AssessorService.Api.Types.Models;
-using SFA.DAS.AssessorService.Api.Types.Models.AO;
 using SFA.DAS.AssessorService.Application.Api.Controllers;
+using SFA.DAS.AssessorService.Domain.DTOs;
 
 namespace SFA.DAS.AssessorService.Application.Api.UnitTests.Controllers.Register.Query
 {

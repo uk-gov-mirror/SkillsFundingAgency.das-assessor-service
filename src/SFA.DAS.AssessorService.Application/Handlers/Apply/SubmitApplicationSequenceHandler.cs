@@ -4,6 +4,7 @@ using SFA.DAS.AssessorService.Api.Types.Models;
 using SFA.DAS.AssessorService.Api.Types.Models.Apply;
 using SFA.DAS.AssessorService.Application.Interfaces;
 using SFA.DAS.AssessorService.ApplyTypes;
+using SFA.DAS.AssessorService.Domain.JsonData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,7 @@ namespace SFA.DAS.AssessorService.Application.Handlers.Apply
                 {
                     if (application.ApplyData.Apply == null)
                     {
-                        application.ApplyData.Apply = new ApplyTypes.Apply();
+                        application.ApplyData.Apply = new Domain.JsonData.Apply();
                     }
 
                     if (string.IsNullOrWhiteSpace(application.ApplyData.Apply.ReferenceNumber))

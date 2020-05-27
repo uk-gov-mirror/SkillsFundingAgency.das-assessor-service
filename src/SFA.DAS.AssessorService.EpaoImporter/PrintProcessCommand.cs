@@ -10,7 +10,6 @@ using SFA.DAS.AssessorService.Domain.Extensions;
 using SFA.DAS.AssessorService.Domain.JsonData.Printing;
 using SFA.DAS.AssessorService.EpaoImporter.Data;
 using SFA.DAS.AssessorService.EpaoImporter.DomainServices;
-using SFA.DAS.AssessorService.EpaoImporter.InfrastructureServices;
 using SFA.DAS.AssessorService.EpaoImporter.Interfaces;
 using SFA.DAS.AssessorService.EpaoImporter.Logger;
 using SFA.DAS.AssessorService.EpaoImporter.Notification;

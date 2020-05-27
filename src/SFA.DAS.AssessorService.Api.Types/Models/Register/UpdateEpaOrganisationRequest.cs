@@ -1,6 +1,5 @@
 ﻿using MediatR;
-using SFA.DAS.AssessorService.ApplyTypes.CharityCommission;
-using SFA.DAS.AssessorService.ApplyTypes.CompaniesHouse;
+using SFA.DAS.AssessorService.Domain.JsonData;
 using System;
 
 namespace SFA.DAS.AssessorService.Api.Types.Models.Register

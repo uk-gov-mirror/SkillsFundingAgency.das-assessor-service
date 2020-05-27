@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using SFA.DAS.AssessorService.Api.Types.Models.AO;
+using SFA.DAS.AssessorService.Domain.DTOs;
 using System;
 
 namespace SFA.DAS.AssessorService.Api.Types.Models

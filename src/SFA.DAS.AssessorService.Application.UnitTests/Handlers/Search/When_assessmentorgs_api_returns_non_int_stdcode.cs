@@ -4,7 +4,7 @@ using Moq;
 using NUnit.Framework;
 using SFA.DAS.Apprenticeships.Api.Types.AssessmentOrgs;
 using SFA.DAS.AssessorService.Api.Types.Models;
-using SFA.DAS.AssessorService.Api.Types.Models.AO;
+using SFA.DAS.AssessorService.Domain.DTOs;
 
 namespace SFA.DAS.AssessorService.Application.UnitTests.Handlers.Search
 {

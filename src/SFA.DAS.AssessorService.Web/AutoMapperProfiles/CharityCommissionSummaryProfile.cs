@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using SFA.DAS.AssessorService.Api.Types.CharityCommission;
-using SFA.DAS.AssessorService.ApplyTypes.CharityCommission;
+using SFA.DAS.AssessorService.Domain.JsonData;
 
 namespace SFA.DAS.AssessorService.Web.AutoMapperProfiles
 {

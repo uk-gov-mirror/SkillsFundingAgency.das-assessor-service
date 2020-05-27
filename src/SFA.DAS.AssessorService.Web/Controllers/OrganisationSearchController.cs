@@ -11,9 +11,8 @@ using Newtonsoft.Json;
 using SFA.DAS.AssessorService.Api.Types.Models;
 using SFA.DAS.AssessorService.Api.Types.Models.Register;
 using SFA.DAS.AssessorService.Application.Api.Client.Clients;
-using SFA.DAS.AssessorService.ApplyTypes.CharityCommission;
-using SFA.DAS.AssessorService.ApplyTypes.CompaniesHouse;
 using SFA.DAS.AssessorService.Domain.Consts;
+using SFA.DAS.AssessorService.Domain.JsonData;
 using SFA.DAS.AssessorService.Domain.Paging;
 using SFA.DAS.AssessorService.Settings;
 using SFA.DAS.AssessorService.Web.Infrastructure;
@@ -320,7 +319,7 @@ namespace SFA.DAS.AssessorService.Web.Controllers
 
                     var newOrg = await _organisationsApiClient.GetEpaOrganisation(epaoId.Details);
                     await _contactsApiClient.UpdateOrgAndStatus(new UpdateContactWithOrgAndStausRequest(user.Id.ToString(),
-                        newOrg.Id.ToString(), newOrg.OrganisationData?.EndPointAssessmentOrgId, ContactStatus.Live));
+                        newOrg.Id.ToString(), newOrg.OrganisationId, ContactStatus.Live));
                     _logger.LogInformation($"Contact with display name {user.DisplayName} is associated with organisation {epaoId.Details}.");
 
                     _sessionService.Set("OrganisationName", newOrg.Name);
@@ -392,7 +391,7 @@ namespace SFA.DAS.AssessorService.Web.Controllers
                 RoATPApproved =  organisationSearchResult.RoATPApproved,
                 RoEPAOApproved= false,
                 EndPointAssessmentOrgId = null,
-                FHADetails = new Api.Types.Models.AO.FHADetails
+                FHADetails = new FHADetails
                 {
                     FinancialDueDate = organisationSearchResult.FinancialDueDate,
                     FinancialExempt = organisationSearchResult.FinancialExempt
@@ -408,7 +407,7 @@ namespace SFA.DAS.AssessorService.Web.Controllers
                 await _contactsApiClient.UpdateOrgAndStatus(new UpdateContactWithOrgAndStausRequest(
                     user.Id.ToString(),
                     registeredOrganisation?.Id.ToString(),
-                    registeredOrganisation?.OrganisationData?.EndPointAssessmentOrgId,
+                    registeredOrganisation?.OrganisationId,
                     ContactStatus.InvitePending));
 
                 await NotifyOrganisationUsers(organisationSearchResult, user);

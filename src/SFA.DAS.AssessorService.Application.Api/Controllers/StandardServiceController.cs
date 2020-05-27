@@ -8,8 +8,8 @@ using SFA.DAS.AssessorService.Application.Interfaces;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using SFA.DAS.AssessorService.Api.Types.Models.Standards;
 using Swashbuckle.AspNetCore.Annotations;
+using SFA.DAS.AssessorService.Domain.Entities;
 
 namespace SFA.DAS.AssessorService.Application.Api.Controllers
 {

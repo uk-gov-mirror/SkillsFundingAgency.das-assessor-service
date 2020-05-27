@@ -1,5 +1,5 @@
 ﻿using SFA.DAS.AssessorService.Api.Types.Models.Validation;
-using SFA.DAS.AssessorService.ApplyTypes;
+using SFA.DAS.AssessorService.Domain.JsonData;
 using SFA.DAS.QnA.Api.Types;
 using System;
 using System.Collections.Generic;

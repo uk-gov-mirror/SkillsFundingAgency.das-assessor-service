@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using SFA.DAS.AssessorService.Api.Types.CompaniesHouse;
-using SFA.DAS.AssessorService.ApplyTypes.CompaniesHouse;
+using SFA.DAS.AssessorService.Domain.JsonData;
 using System.Linq;
 
 namespace SFA.DAS.AssessorService.Web.AutoMapperProfiles

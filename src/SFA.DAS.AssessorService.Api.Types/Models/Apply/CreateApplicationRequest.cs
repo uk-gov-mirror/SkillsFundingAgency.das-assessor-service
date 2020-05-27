@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using SFA.DAS.AssessorService.ApplyTypes;
+using SFA.DAS.AssessorService.Domain.JsonData;
 using System;
 using System.Collections.Generic;
 

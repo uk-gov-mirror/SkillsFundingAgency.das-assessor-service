@@ -31,6 +31,7 @@
     <PackageReference Include="WindowsAzure.Storage" Version="8.7.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SFA.DAS.AssessorService.Api.Types\SFA.DAS.AssessorService.Api.Types.csproj" />
     <ProjectReference Include="..\SFA.DAS.AssessorService.Application.Api.Client\SFA.DAS.AssessorService.Application.Api.Client.csproj" />
     <ProjectReference Include="..\SFA.DAS.AssessorService.Domain\SFA.DAS.AssessorService.Domain.csproj" />
     <ProjectReference Include="..\SFA.DAS.AssessorService.NLog.Targets.Redis\SFA.DAS.AssessorService.NLog.Targets.Redis.csproj" />
