@@ -11,7 +11,7 @@ namespace SFA.DAS.AssessorService.Application.Api.Infrastructure
     /// <summary>
     /// NOTE: Provider Register here calls into Find Apprenticeship Training (FAT) and not RoATP!
     /// </summary>
-    public class ProviderRegisterApiClient
+    public class ProviderRegisterApiClient : IProviderRegisterApiClient
     {
         private readonly HttpClient _client;
         private readonly ILogger<ProviderRegisterApiClient> _logger;
@@ -22,7 +22,7 @@ namespace SFA.DAS.AssessorService.Application.Api.Infrastructure
             _logger = logger;
         }
 
-        public async Task<IEnumerable<AssessorService.Api.Types.Models.OrganisationSearchResult>> SearchOrgansiationByName(string name, bool exactMatch)
+        public async Task<IEnumerable<AssessorService.Api.Types.Models.OrganisationSearchResult>> SearchOrganisationByName(string name, bool exactMatch)
         {
             _logger.LogInformation($"Searching Provider Register. Name: {name}");
             var apiResponse = await Get<IEnumerable<AssessorService.Api.Types.Models.ProviderRegister.Provider>>($"/providers/search?keywords={name}");
@@ -32,16 +32,16 @@ namespace SFA.DAS.AssessorService.Application.Api.Infrastructure
                 apiResponse = apiResponse?.Where(r => r.ProviderName.Equals(name, StringComparison.InvariantCultureIgnoreCase)).AsEnumerable();
             }
 
-            return Mapper.Map<IEnumerable<SFA.DAS.AssessorService.Api.Types.Models.ProviderRegister.Provider>, 
+            return Mapper.Map<IEnumerable<SFA.DAS.AssessorService.Api.Types.Models.ProviderRegister.Provider>,
                 IEnumerable<SFA.DAS.AssessorService.Api.Types.Models.OrganisationSearchResult>>(apiResponse);
         }
 
-        public async Task<SFA.DAS.AssessorService.Api.Types.Models.OrganisationSearchResult> SearchOrgansiationByUkprn(int ukprn)
+        public async Task<SFA.DAS.AssessorService.Api.Types.Models.OrganisationSearchResult> SearchOrganisationByUkprn(int ukprn)
         {
             _logger.LogInformation($"Searching Provider Register. Ukprn: {ukprn}");
             var apiResponse = await Get<SFA.DAS.AssessorService.Api.Types.Models.ProviderRegister.Provider>($"/providers/{ukprn}");
 
-            return Mapper.Map<AssessorService.Api.Types.Models.ProviderRegister.Provider, 
+            return Mapper.Map<AssessorService.Api.Types.Models.ProviderRegister.Provider,
                 AssessorService.Api.Types.Models.OrganisationSearchResult>(apiResponse);
         }
 

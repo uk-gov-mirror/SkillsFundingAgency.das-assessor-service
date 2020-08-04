@@ -290,6 +290,7 @@ namespace SFA.DAS.AssessorService.Data
                 return assessmentOrganisationSummaries;
             }
         }
+
         public async Task<IEnumerable<AssessmentOrganisationSummary>> GetAssessmentOrganisationsByOrganisationId(string organisationId)
         {
             var connectionString = _configuration.SqlConnectionString;
@@ -305,7 +306,7 @@ namespace SFA.DAS.AssessorService.Data
                     + "LEFT OUTER JOIN [Contacts] c ON c.Username = o.PrimaryContact AND c.EndPointAssessorOrganisationId = o.EndPointAssessorOrganisationId "
                     + "WHERE o.EndPointAssessorOrganisationId like @organisationId";
 
-                var assessmentOrganisationSummaries = await connection.QueryAsync<AssessmentOrganisationSummary>(sql, new {organisationId = $"{organisationId.Replace(" ","")}" });
+                var assessmentOrganisationSummaries = await connection.QueryAsync<AssessmentOrganisationSummary>(sql, new {organisationId = organisationId.Trim() });
                 return assessmentOrganisationSummaries;
             }
         }

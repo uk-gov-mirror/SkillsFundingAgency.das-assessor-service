@@ -8,4 +8,9 @@ namespace SFA.DAS.AssessorService.Api.Types.Models
     {
         public string SearchTerm { get; set; }
     }
+
+    // public class SearchAssessmentOrganisationsAcrossServicesRequest : IRequest<List<AssessmentOrganisationSummary>>
+    // {
+    //     public string SearchTerm { get; set; }
+    // }
 }
